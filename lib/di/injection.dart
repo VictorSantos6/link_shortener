@@ -8,6 +8,8 @@ import 'package:link_shortener/data/data_sources/click_remote_data_source_impl.d
 import 'package:link_shortener/data/repositories/link_repository_impl.dart';
 import 'package:link_shortener/domain/repositories/link_repository.dart';
 import 'package:link_shortener/domain/usecases/usecases.dart';
+import 'package:link_shortener/presentation/cubits/link/link_cubit.dart';
+import 'package:link_shortener/presentation/cubits/click/click_cubit.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -31,4 +33,8 @@ Future<void> setupDependencies() async {
   getIt.registerFactory(() => GetLinkByCodeUseCase(getIt()));
   getIt.registerFactory(() => RecordLinkClickUseCase(getIt()));
   getIt.registerFactory(() => GetClicksForLinkUseCase(getIt()));
+
+  // Cubits
+  getIt.registerFactory(() => LinkCubit(getIt(), getIt(), getIt()));
+  getIt.registerFactory(() => ClickCubit(getIt(), getIt()));
 }
