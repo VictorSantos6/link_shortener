@@ -48,3 +48,13 @@ app.*.map.json
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
 macos/Runner/GoogleService-Info.plist
+
+# Firebase configuration
+lib/firebase_options.dart
+firebase.json
+firepit-log.txt
+
+# Platform-specific config secrets
+ios/Runner/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
+android/app/google-services.json
